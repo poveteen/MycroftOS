@@ -4,8 +4,8 @@
 #
 ################################################################################
 
-RESPEAKER_VERSION = 6b4133b5f056fd0218f3ffd197df45fab2ae1ef7
-RESPEAKER_SITE = $(call github,respeaker,seeed-voicecard,$(RESPEAKER_VERSION))
+RESPEAKER_VERSION = 0ed11aa9a4b4c627ed98620026b23f8bb86afd5a
+RESPEAKER_SITE = $(call github,HinTak,seeed-voicecard,$(RESPEAKER_VERSION))
 RESPEAKER_LICENSE = GNU General Public License v3.0
 RESPEAKER_DEPENDENCIES = rpi-firmware dtc
 
@@ -14,6 +14,9 @@ $(eval $(kernel-module))
 define RESPEAKER_INSTALL_TARGET_CMDS
 	$(INSTALL) -D -m 0644 $(BR2_EXTERNAL_MYCROFTOS_PATH)/package/respeaker/seeed-voicecard.service \
 		$(TARGET_DIR)/usr/lib/systemd/system/seeed-voicecard.service
+	mkdir -p $(TARGET_DIR)/etc/systemd/system/sysinit.target.wants
+	ln -fs ../../../../usr/lib/systemd/system/seeed-voicecard.service \
+		$(TARGET_DIR)/etc/systemd/system/sysinit.target.wants/seeed-voicecard.service
 
 	$(INSTALL) -D -m 0644 $(BR2_EXTERNAL_MYCROFTOS_PATH)/package/respeaker/respeaker.conf \
 		$(TARGET_DIR)/etc/modules-load.d/respeaker.conf

@@ -1,0 +1,7 @@
+config BR2_PACKAGE_TOYKON_GUI
+	bool "toykon-gui"
+	help
+	  The KDE-based visual interface for working with Mycroft.
+
+	  https://github.com/poveteen/toykkon-gui
+

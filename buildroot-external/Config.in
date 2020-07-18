@@ -2,7 +2,7 @@ menu "Mycroft A.I. Personal Assistant"
 	source "$BR2_EXTERNAL_MYCROFTOS_PATH/package/firstboot-service/Config.in"
 	source "$BR2_EXTERNAL_MYCROFTOS_PATH/package/prepare_system-service/Config.in"
 	source "$BR2_EXTERNAL_MYCROFTOS_PATH/package/python-mycroft/Config.in"
-	source "$BR2_EXTERNAL_MYCROFTOS_PATH/package/mycroft-gui/Config.in"
+	source "$BR2_EXTERNAL_MYCROFTOS_PATH/package/toykon-gui/Config.in"
 	source "$BR2_EXTERNAL_MYCROFTOS_PATH/package/mycroft-gui-embedded/Config.in"
 	source "$BR2_EXTERNAL_MYCROFTOS_PATH/package/mycroft-service/Config.in"
 	source "$BR2_EXTERNAL_MYCROFTOS_PATH/package/mycroft-splash/Config.in"
@@ -111,5 +111,6 @@ menu "Additional external python modules"
 	source "$BR2_EXTERNAL_MYCROFTOS_PATH/package/python-vlc/Config.in"
 	source "$BR2_EXTERNAL_MYCROFTOS_PATH/package/python-xmlrunner/Config.in"
 	source "$BR2_EXTERNAL_MYCROFTOS_PATH/package/python-xxhash/Config.in"
+
 endmenu
 endmenu
